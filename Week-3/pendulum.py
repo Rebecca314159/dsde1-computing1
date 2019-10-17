@@ -11,8 +11,8 @@ def period(L,g):
         raise ValueError
     if g >0 and L<0:
         raise ValueError
-
-    first = (L/g)**1/2
-    T = first *2*pi
-   
+    first = (float(L)/float(g))**0.5
+    T = first*2*pi
     return T
+
+
