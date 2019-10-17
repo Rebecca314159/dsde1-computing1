@@ -9,20 +9,21 @@ with functions.
 # write a function that adds 1
 # to the input and prints the result
 def inc(a):
-    print(a)
+    print(a+1)
 
 
 # write a function that adds 1
 # to the input and returns the result
 def inc_return(a):
-    return # hint this is incomplete
+    return a+1
+    # hint this is incomplete
 
 
 # write a function that adds
 # the two input numbers together
 # and returns the sum
 def sum(a, b):
-    return
+    return a+b
 
 
 # write a function that takes two
@@ -30,14 +31,19 @@ def sum(a, b):
 # sum() and then increments the sum
 # using inc_return
 def sum_inc(a, b):
-    return
+    new = sum(a,b)
+    return inc_return(new)
+    
 
 
 # write a function that returns a 
 # boolean (True or False) for whether 
 # the input number is even
 def is_even(a):
-    return
+    if a%2 == 0:
+        return True 
+    else:
+        return False
 
 
 # create for loop that takes a string
@@ -49,5 +55,5 @@ def is_even(a):
 def string_repeat(phrase, repeat):
     # hint: you can add strings together 
     # in order to concatenate them
-    return
+    return phrase * repeat
 
