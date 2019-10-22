@@ -1,8 +1,8 @@
-'''
-structures.py
+#'''
+#structures.py
 
-Simple functions performing operations on basic Python data structures.  
-'''
+#Simple functions performing operations on basic Python data structures.  
+#'''
 
 # Lists
 
@@ -30,7 +30,8 @@ def part_reverse(the_list, beginning, end):
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
 # will return [0,1,2,3,3,3,4]. 
 def repeat_at_index(the_list, index):
-    return
+    new = the_list[0, index] + the_list[index]*3 + the_list[index+1, -1]
+    return new
 
 
 # Strings
@@ -38,14 +39,23 @@ def repeat_at_index(the_list, index):
 # write a function that checks whether the word is a palindrome, i.e. it reads
 # the same forward and backwards
 def palindrome_word(word):
-    return
+    if word == word [::-1]:
+       return True 
+    else:
+        return False
 
 # write a function that checks whether the sentence is a palindrome, i.e. it
 # read the same forward and backward. Ignore all spaces and other characters
 # like fullstops, commas, etc. Also do not consider whether the letter is
 # capital or not. 
 def palindrome_sentence(sentence):
-    return
+    sentence.lower()
+    sentence = sentence.replace(' ', '')
+    if sentence == sentence [::-1]:
+        return True 
+    else:
+        return False
+   
 
 # write a function that concatenates two sentences. First the function checks
 # whether the sentence meets the following criteria: it starts with a capital
