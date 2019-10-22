@@ -19,12 +19,12 @@ def first_and_last(the_list):
 # If "end" is greater then "beginning" or any og the indices is out of the
 # list, raise a "ValueError" exception. 
 def part_reverse(the_list, beginning, end):
-    if end > beginning or if end > len(the_list) or if beginning > len(the_list):
+    if beginning > end or if end > len(the_list) or if beginning > len(the_list):
         raise ValueError
     new = the_list[beginning, end]
-
-    return # hint this is incomplete
-
+    new.reverse()
+    return new
+# hint this is incomplete
 
 # write a function that at the "index" of "the_list" inserts three times the
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
