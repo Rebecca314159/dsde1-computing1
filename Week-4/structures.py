@@ -5,7 +5,7 @@
 #'''
 
 # Lists
-
+import string
 # write a function that returns a list containig the first and the last element
 # of "the_list". 
 def first_and_last(the_list):
@@ -51,6 +51,7 @@ def palindrome_word(word):
 def palindrome_sentence(sentence):
     sentence.lower()
     sentence = sentence.replace(' ', '')
+    sentence = sentence.translate(None, string.punctuation)
     if sentence == sentence [::-1]:
         return True 
     else:
@@ -64,8 +65,17 @@ def palindrome_sentence(sentence):
 # the end.  The concatenated sentence must have no white space at the beginning
 # or at the end and the must be exactly one space after the end of the first
 # sentence. 
-def concatenate_sentences(sentenece1, sentence2):
-    return
+def concatenate_sentences(sentence1, sentence2):
+    if sentence1[0].isupper and sentence1[-1] == '.' or sentence1[-1] == '?' or sentence1[-1] == '!':
+        sentence1 = 'good'
+    if sentence2[0].isupper and sentence2[-1] == '.' or sentence2[-1] == '?' or sentence2[-1] == '!':
+        sentence2 = 'good'
+    if sentence1 == 'good' and sentence2 == 'good':
+        sentence1.strip()
+        sentence2.strip()
+        return sentence1 + ' ' + sentence2
+    else:
+        pass
 
 
 # Dictionaries
