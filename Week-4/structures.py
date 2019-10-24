@@ -23,7 +23,7 @@ def first_and_last(the_list):
 
 def part_reverse(the_list, beginning, end):
     '''Slices the first list variable between the second and third variables, then returns the reverse.'''
-    if beginning > end or if end > len(the_list) or if beginning > len(the_list):
+    if beginning > end or end > len(the_list) or beginning > len(the_list):
         raise ValueError
     new = the_list[beginning, end]
     new.reverse()
