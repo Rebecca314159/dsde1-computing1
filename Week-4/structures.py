@@ -8,7 +8,9 @@
 import string
 # write a function that returns a list containig the first and the last element
 # of "the_list". 
+
 def first_and_last(the_list):
+    '''Returns a list with the first and last elements of the input list.'''
     new_list = [the_list[0], the_list[-1]]
     return new_list
 
@@ -18,18 +20,23 @@ def first_and_last(the_list):
 # reverse order than in the original "the_list". 
 # If "end" is greater then "beginning" or any og the indices is out of the
 # list, raise a "ValueError" exception. 
+
 def part_reverse(the_list, beginning, end):
+    '''Slices the first list variable between the second and third variables, then returns the reverse.'''
     if beginning > end or if end > len(the_list) or if beginning > len(the_list):
         raise ValueError
     new = the_list[beginning, end]
     new.reverse()
     return new
+
 # hint this is incomplete
 
 # write a function that at the "index" of "the_list" inserts three times the
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
 # will return [0,1,2,3,3,3,4]. 
+
 def repeat_at_index(the_list, index):
+    '''Repeat the element of the input list at the imputted index 3 times in a new list.'''
     new = the_list[0, index] + the_list[index]*3 + the_list[index+1, -1]
     return new
 
@@ -38,7 +45,9 @@ def repeat_at_index(the_list, index):
 
 # write a function that checks whether the word is a palindrome, i.e. it reads
 # the same forward and backwards
+
 def palindrome_word(word):
+    '''Checks if a word is a palindrome.'''
     if word == word [::-1]:
        return True 
     else:
@@ -48,7 +57,9 @@ def palindrome_word(word):
 # read the same forward and backward. Ignore all spaces and other characters
 # like fullstops, commas, etc. Also do not consider whether the letter is
 # capital or not. 
+
 def palindrome_sentence(sentence):
+    '''Checks if a sentence without punctuation is a palindrome.'''
     sentence.lower()
     sentence = sentence.replace(' ', '')
     sentence = sentence.translate(None, string.punctuation)
@@ -65,7 +76,9 @@ def palindrome_sentence(sentence):
 # the end.  The concatenated sentence must have no white space at the beginning
 # or at the end and the must be exactly one space after the end of the first
 # sentence. 
+
 def concatenate_sentences(sentence1, sentence2):
+    '''Concatenates two imput sentences if they start with a capital and end with a full stop, etc.'''
     if sentence1[0].isupper and sentence1[-1] == '.' or sentence1[-1] == '?' or sentence1[-1] == '!':
         sentence1 = 'good'
     if sentence2[0].isupper and sentence2[-1] == '.' or sentence2[-1] == '?' or sentence2[-1] == '!':
@@ -83,14 +96,23 @@ def concatenate_sentences(sentence1, sentence2):
 # write a function that checks whether there is a record with given key in the
 # dictionary. Return True or False.
 def index_exists(dictionary, key):
-    return
+    '''Checks if a key exists in a dictionary.'''
+    if key in dictionary:
+        return True
+    else:
+        return False
 
 # write a function which checks whether given value is stored in the
 # dictionary. Return True or False.
 def value_exists(dictionary, value):
-    return
+    '''Checks if a value exists in a dictionary.'''
+    if value in dictionary.values():
+        True
+    else:
+        False
 
 # write a function that returns a new dictionary which contains all the values
 # from dictionary1 and dictionary2.
 def merge_dictionaries(dictionary1, dictionary2):
-    return
+    '''Merges two dictionaries.'''
+    return dictionary1.update(dictionary2)
