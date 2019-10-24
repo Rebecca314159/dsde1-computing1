@@ -16,11 +16,11 @@ with default values.
 # it returns 'Hello, <user_name>, and welcome to <place>
 
 def welcome_message(user_name = '', place = ''):
-    if user_name = '' and place = '':
+    if user_name == '' and place == '':
         greeting = 'Hello and welcome'
-    elif user_name != '' and place = '':
+    elif user_name != '' and place == '':
         greeting = 'Hello, ' + user_name + ', and welcome'
-    elif user_name = '' and place != '':
+    elif user_name == '' and place != '':
         greeting = 'Hello and welcome to ' + place
     elif user_name != '' and place != '':
         greeting = 'Hello, ' + user_name + ', and welcome to ' + place
@@ -37,18 +37,22 @@ def welcome_message(user_name = '', place = ''):
 # (return list of all modes if there is a tie between multiple values)
 # if avg_type='mean', return the mean of the list
 # if avg_type='median', return the median of this list
-def list_average(numbers, avg_type = ''):
-    if avg_type = '' or avg_type = 'mean':
-        return sum(numbers) / len(numbers)
-    if avg_type = 'mode':
+def list_average(numbers = [1,2,3,4,4,5,6], avg_type = ''):
+    if len(numbers) == 0:
+        num = 0
+    if numbers == []:
+        num = 0
+    elif avg_type == '' or avg_type == 'mean':
+        num = sum(numbers) / len(numbers)
+    elif avg_type == 'mode':
         counter = 0
         num = numbers[0] 
         for i in numbers: 
-            frequency = List.count(i) 
+            frequency = numbers.count(i) 
             if(frequency > counter): 
                 counter = frequency 
                 num = i 
-        return num
-    if avg_type = 'median':
+    elif avg_type == 'median':
         numbers.sort()
-        return numbers[int(len(numbers)/2)]
+        num = numbers[int(len(numbers)/2)]
+    return num
