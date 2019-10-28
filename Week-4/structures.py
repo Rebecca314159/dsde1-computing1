@@ -25,6 +25,8 @@ def part_reverse(the_list, beginning, end):
     '''Slices the first list variable between the second and third variables, then returns the reverse.'''
     if beginning > end or end > len(the_list) or beginning > len(the_list):
         raise ValueError
+    if beginning != int or end >= int:
+        raise TypeError
     new = the_list[beginning, end]
     new.reverse()
     return new
@@ -37,6 +39,8 @@ def part_reverse(the_list, beginning, end):
 
 def repeat_at_index(the_list, index):
     '''Repeat the element of the input list at the imputted index 3 times in a new list.'''
+    if index != int:
+        raise TypeError
     new = the_list[0, index] + the_list[index]*3 + the_list[index+1, -1]
     return new
 
@@ -62,7 +66,7 @@ def palindrome_sentence(sentence):
     '''Checks if a sentence without punctuation is a palindrome.'''
     sentence.lower()
     sentence = sentence.replace(' ', '')
-    sentence = sentence.translate(None, string.punctuation)
+    sentence = sentence.join(e for e in string if e.isalnum())
     if sentence == sentence [::-1]:
         return True 
     else:
@@ -80,15 +84,14 @@ def palindrome_sentence(sentence):
 def concatenate_sentences(sentence1, sentence2):
     '''Concatenates two imput sentences if they start with a capital and end with a full stop, etc.'''
     if sentence1[0].isupper and sentence1[-1] == '.' or sentence1[-1] == '?' or sentence1[-1] == '!':
-        sentence1 = 'good'
-    if sentence2[0].isupper and sentence2[-1] == '.' or sentence2[-1] == '?' or sentence2[-1] == '!':
-        sentence2 = 'good'
-    if sentence1 == 'good' and sentence2 == 'good':
-        sentence1.strip()
-        sentence2.strip()
-        return sentence1 + ' ' + sentence2
-    else:
         pass
+    if sentence2[0].isupper and sentence2[-1] == '.' or sentence2[-1] == '?' or sentence2[-1] == '!':
+        pass
+    else:
+        return False
+    sentence1.strip()
+    sentence2.strip()
+    return sentence1 + ' ' + sentence2
 
 
 # Dictionaries
